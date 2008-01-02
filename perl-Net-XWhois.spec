@@ -12,6 +12,7 @@ Source: %{real_name}-%{version}.tar.bz2
 Url: http://www.cpan.org
 BuildRequires:	perl-devel
 BuildArch: noarch
+Buildroot: %{_tmppath}/%{name}-root
 Requires: perl >= 0:5.00503
 
 %description
