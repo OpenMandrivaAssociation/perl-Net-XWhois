@@ -5,7 +5,7 @@
 Name: %{name}
 Version: %{version}
 Summary: Extensible client framework for doing Whois queries and parsing server response
-Release: %mkrel 4
+Release: %mkrel 6
 License: GPL or Artistic
 Group: Development/Perl
 Source: %{real_name}-%{version}.tar.bz2
