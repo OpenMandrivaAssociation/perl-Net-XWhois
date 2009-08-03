@@ -1,19 +1,18 @@
-%define name perl-Net-XWhois
-%define real_name Net-XWhois
-%define version 0.90
+%define upstream_name    Net-XWhois
+%define upstream_version 0.90
 
-Name: %{name}
-Version: %{version}
-Summary: Extensible client framework for doing Whois queries and parsing server response
-Release: %mkrel 7
-License: GPL or Artistic
-Group: Development/Perl
-Source: %{real_name}-%{version}.tar.bz2
-Url: http://www.cpan.org
-BuildRequires:	perl-devel
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Extensible client framework for doing Whois queries and parsing server response
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch: noarch
-Buildroot: %{_tmppath}/%{name}-root
-Requires: perl >= 0:5.00503
+Buildroot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 The Net::XWhois class provides an extensible client framework for
@@ -24,7 +23,7 @@ Supports response caching and comes with a drop-in replacement for
 the whois program. 
 
 %prep
-%setup -q -n %{real_name}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -45,5 +44,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc TODO ARTISTIC contribs/*
 %{perl_vendorlib}/Net/*
 %{_mandir}/*/*
-
-
