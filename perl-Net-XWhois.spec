@@ -1,15 +1,13 @@
 %define upstream_name    Net-XWhois
-%define upstream_version 0.90
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.90
+Release:	6
 
 Summary:	Extensible client framework for doing Whois queries and parsing server response
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Net-XWhois
-Source0:	https://cpan.metacpan.org/authors/id/V/VI/VIPUL/Net-XWhois-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/V/VI/VIPUL/Net-XWhois-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -24,7 +22,7 @@ Supports response caching and comes with a drop-in replacement for
 the whois program. 
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -44,9 +42,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %changelog
 * Mon Aug 03 2009 Jérôme Quelin <jquelin@mandriva.org> 0.900.0-1mdv2010.0
 + Revision: 407946
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.90-7mdv2009.0
+- rebuild using %0.90 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.90-7mdv2009.0
 + Revision: 258138
 - rebuild
 
